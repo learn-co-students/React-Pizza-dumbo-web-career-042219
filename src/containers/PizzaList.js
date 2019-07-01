@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
 import Pizza from '../components/Pizza'
+
 class PizzaList extends Component {
 
   render() {
+
+    const slinginDough = () => {
+      return this.props.ourPizzas.map(onePie => <Pizza key={onePie.id} pieDeets={onePie} editPie={this.props.editPie} /> ) }
+
     return (
       <table className="table table-striped">
         <thead>
@@ -14,9 +19,7 @@ class PizzaList extends Component {
           </tr>
         </thead>
         <tbody>
-          {
-            //render Pizza here
-          }
+          { slinginDough() }
         </tbody>
       </table>
     );
